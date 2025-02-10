@@ -55,7 +55,7 @@ namespace My_WebsiteApi.Controllers
             var culture = new CultureInfo("vi-VN");
 
             var sp = _context.sanphams
-       .OrderByDescending(p => p.Ngay_add) 
+       .OrderByDescending(p => p.Ngay_add) // xx sp moi nhat den cu nhat 
        .Take(20) 
        .ToList();
             if (!sp.Any())
@@ -110,7 +110,7 @@ namespace My_WebsiteApi.Controllers
             foreach (var i in sp)
             {
                 var tendanhm = danhMucs.SingleOrDefault(p => p.Id_danhmuc == i.Id_danhmuc); // tim danh muc theo id 
-                var tenhang = hangSxes.SingleOrDefault(p => p.Id_hangsx == i.Id_hangsx); // tim danh muc theo id 
+                var tenhang = hangSxes.SingleOrDefault(p => p.Id_hangsx == i.Id_hangsx); //tim hang theo id 
                 var sanpham = new SanphammodelAdminidd
                 {
                     Id_sanpham = i.Id_sanpham,

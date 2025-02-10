@@ -82,13 +82,13 @@ namespace My_WebsiteApi.Controllers
         [HttpPost("Logout")]
         public IActionResult Logout()
         {
-            // Lấy token từ Authorization Header
+        
             var authHeader = Request.Headers["Authorization"].FirstOrDefault();
            
 
             if (authHeader == null || !authHeader.StartsWith("Bearer "))
             {
-                // Nếu không có token hoặc token không hợp lệ
+                
                 return Unauthorized(new { message = "Missing or invalid token" });
             }
             
